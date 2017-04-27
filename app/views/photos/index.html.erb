@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="col-md-6">
+
+    <h1>All Photos</h1>
+
+    <a href="/photos/new">
+      Add a new photo
+    </a>
+
+    <% @list_of_all_my_photos.each do |the_photo| %>
+    <div class="thumbnail">
+      <img src="<%= the_photo.source %>">
+
+      <div class="caption">
+        <p><%= the_photo.caption %>
+        </p>
+
+        <a href="/photos/<%= the_photo.id %>" class="btn btn-default btn-block">
+          Show Details
+        </a>
+
+        <a href="/photos/<%= the_photo.id %>/edit" class="btn btn-default btn-block">
+          Edit
+        </a>
+
+        <a href="/delete_photo/<%= the_photo.id %>" class="btn btn-default btn-block">
+          Delete
+        </a>
+      </div>
+    </div>
+
+    <% end %>
+
+
+  </div>
+</div>
